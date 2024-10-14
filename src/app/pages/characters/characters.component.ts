@@ -1,13 +1,14 @@
 import { NgFor } from '@angular/common'
 import { HttpClient } from '@angular/common/http'
 import { Component, type OnInit } from '@angular/core'
+import { RouterLink } from '@angular/router'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { faAnglesLeft, faChevronLeft, faChevronRight, faAnglesRight } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-characters',
   standalone: true,
-  imports: [FontAwesomeModule, NgFor],
+  imports: [FontAwesomeModule, NgFor, RouterLink],
   templateUrl: './characters.component.html',
 })
 export class CharactersComponent implements OnInit {

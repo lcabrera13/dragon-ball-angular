@@ -1,0 +1,38 @@
+<div class="flex flex-col gap-4" *ngIf="character">
+  <div class="flex">
+    <div class="basis-1/2 flex justify-center items-center bg-slate-50 relative p-10">
+      <img [src]="character.originPlanet.image" [alt]="character.name"
+        class="object-cover blur-sm w-full h-full absolute">
+      <img [src]="character.image" [alt]="character.name" class="drop-shadow-[0_0_5px_rgba(0,0,0,0.5)] h-96 z-10">
+    </div>
+    <div class="basis-1/2 px-4">
+      <h2 class="font-bold text-2xl mb-2">{{ character.name }}</h2>
+      <p class="text-lg text-justify mb-2">{{ character.description }}</p>
+      <div class="flex flex-row justify-between gap-4">
+        <div class="w-1/3 border border-black rounded-md overflow-hidden">
+          <div class="bg-black text-white text-center px-10 py-1">Ki</div>
+          <p class="text-sm text-center font-semibold px-10 py-1">{{character.ki}}</p>
+        </div>
+        <div class="w-1/3 border border-black rounded-md overflow-hidden">
+          <div class="bg-black text-white text-center px-10 py-1">Raza</div>
+          <p class="text-sm text-center font-semibold px-10 py-1">{{character.race}}</p>
+        </div>
+        <div class="w-1/3 border border-black rounded-md overflow-hidden">
+          <div class="bg-black text-white text-center px-10 py-1">Genero</div>
+          <p class="text-sm text-center font-semibold px-10 py-1">{{character.race}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="character.transformations.length > 0">
+    <h3 class="font-bold text-lg mb-2">Transformaciones</h3>
+    <div class="flex gap-4">
+      <div *ngFor="let transformation of character.transformations"
+        class="group bg-slate-50 border-gray-500 border rounded-md p-4">
+        <img [src]="transformation.image" [alt]="transformation.name"
+          class="h-44 aspect-[4/3] object-contain mix-blend-luminosity group-hover:mix-blend-normal group-hover:drop-shadow-[0_0_5px_rgba(0,0,0,0.5)]">
+        <p class="text-sm text-center">{{ transformation.name }}</p>
+      </div>
+    </div>
+  </div>
+</div>
