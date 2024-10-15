@@ -1,0 +1,18 @@
+<div class="group bg-slate-50 border-gray-500 border rounded-md flex flex-col gap-2 p-4">
+  <div class="flex justify-evenly gap-2">
+    <img [src]="character().image" [alt]="character().name"
+      class="h-40 object-contain group-hover:drop-shadow-[0_0_5px_rgba(0,0,0,0.5)] group-hover:scale-105" />
+    <div class="flex flex-col gap-2">
+      <h2 class="text-center font-bold text-xl">{{ character().name }}</h2>
+      <p>
+        <span class="bg-green-400 rounded-md text-xs px-1 py-0.5">{{ character().race }}</span>
+      </p>
+      <p>
+        <span class="bg-green-400 rounded-md text-xs px-1 py-0.5">{{ character().gender }}</span>
+      </p>
+    </div>
+  </div>
+  <a [routerLink]="['character', character().id]"
+    class="border border-black text-black rounded-md p-1 text-xs text-center group-hover:bg-black group-hover:text-white">Ver
+    informacion</a>
+</div>

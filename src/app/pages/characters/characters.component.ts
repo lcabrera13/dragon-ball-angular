@@ -1,24 +1,21 @@
-import { NgFor } from '@angular/common'
 import { Component, type OnInit } from '@angular/core'
 import { RouterLink } from '@angular/router'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
-import { faAnglesLeft, faChevronLeft, faChevronRight, faAnglesRight } from '@fortawesome/free-solid-svg-icons'
+// import { faAnglesLeft, faChevronLeft, faChevronRight, faAnglesRight } from '@fortawesome/free-solid-svg-icons'
 import { CharactersService } from '../../core/services/characters.service'
+import { CharacterCardComponent } from "../../components/character-card/character-card.component";
+import { Character, Links } from '../../core/models'
+import { PaginationComponent } from "../../components/pagination/pagination.component";
 
 @Component({
   selector: 'app-characters',
   standalone: true,
-  imports: [FontAwesomeModule, NgFor, RouterLink],
+  imports: [FontAwesomeModule, RouterLink, CharacterCardComponent, PaginationComponent],
   templateUrl: './characters.component.html',
 })
 export class CharactersComponent implements OnInit {
-  faAnglesLeft = faAnglesLeft
-  faChevronLeft = faChevronLeft
-  faChevronRight = faChevronRight
-  faAnglesRight = faAnglesRight
-
-  links: any = {}
-  items: any[] = []
+  links: Links | null = null
+  items: Character[] = []
 
   constructor(private charactersService: CharactersService) {}
 
@@ -29,7 +26,7 @@ export class CharactersComponent implements OnInit {
   getCharacters(url?: string): void {
     this.charactersService.getCharacters(url).subscribe({
       next: (data) => {
-        const { items, links, meta } = data
+        const { items, links } = data
         this.items = items
         this.links = links
       },

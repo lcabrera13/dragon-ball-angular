@@ -1,0 +1,15 @@
+export enum Race {
+  Human = "Human",
+  Saiyan = "Saiyan",
+  Namekian = "Namekian",
+  Majin = "Majin",
+  FriezaRace = "Frieza Race",
+  Android = "Android",
+  JirenRace = "Jiren Race",
+  God = "God",
+  Angel = "Angel",
+  Evil = "Evil",
+  Nucleico = "Nucleico",
+  NucleicoBenigno = "Nucleico benigno",
+  Unknown = "Unknown",
+}
