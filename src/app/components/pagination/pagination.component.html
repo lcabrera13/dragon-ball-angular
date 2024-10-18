@@ -1,20 +1,20 @@
 <div class="flex justify-center gap-2 m-4">
-  <button type="button" [disabled]="links.first === ''"
+  <button id="btnFirst" type="button" aria-label="Primera pagina" [disabled]="links.first === ''"
     class="p-2 border border-black rounded-md hover:bg-black hover:text-white disabled:opacity-40 disabled:bg-white disabled:text-black disabled:cursor-not-allowed"
     (click)="changePage(links.first)">
     <fa-icon [icon]="faAnglesLeft"></fa-icon>
   </button>
-  <button type="button" [disabled]="links.previous  === ''"
+  <button id="btnPrevious" type="button" aria-label="Pagina anterior" [disabled]="links.previous  === ''"
     class="p-2 border border-black rounded-md hover:bg-black hover:text-white disabled:opacity-40 disabled:bg-white disabled:text-black disabled:cursor-not-allowed"
     (click)="changePage(links.previous)">
     <fa-icon [icon]="faChevronLeft"></fa-icon>
   </button>
-  <button type="button" [disabled]="links.next  === ''"
+  <button id="btnNext" type="button" aria-label="Pagina siguiente" [disabled]="links.next  === ''"
     class="p-2 border border-black rounded-md hover:bg-black hover:text-white disabled:opacity-40 disabled:bg-white disabled:text-black disabled:cursor-not-allowed"
     (click)="changePage(links.next)">
     <fa-icon [icon]="faChevronRight"></fa-icon>
   </button>
-  <button type="button" [disabled]="links.last  === ''"
+  <button id="btnLast" type="button" aria-label="Ultima pagina" [disabled]="links.last  === ''"
     class="p-2 border border-black rounded-md hover:bg-black hover:text-white disabled:opacity-40 disabled:bg-white disabled:text-black disabled:cursor-not-allowed"
     (click)="changePage(links.last)">
     <fa-icon [icon]="faAnglesRight"></fa-icon>
